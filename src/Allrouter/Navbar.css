@@ -1,0 +1,63 @@
+/* Navbar.css */
+header {
+    background-color: #010101;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .first-layer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .first-layer__logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .first-layer__name p {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic; /* Add this line to make it italic */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 660px;
+  }
+  
+  .first-layer__upload {
+    margin-left: auto;
+  }
+  
+  .navbar {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  .nav-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: #444;
+  }
+  

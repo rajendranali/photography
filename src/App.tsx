@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import AllRouter from './Allrouter/Router';
+import Navbar from './Allrouter/Navbar';
 
 function App() {
   return (
     <div className="App">
-     
+       <Navbar />
+      <AllRouter />
     </div>
   );
 }
