@@ -65,4 +65,110 @@ header {
   .nav-link:hover {
     background-color: #444;
   }
+  /* Navbar.css */
+
+  
+  /* Add the transition styles for the navbar */
+  /* Navbar.css */
+
+/* Your existing styles for the header, first-layer, and navbar */
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: rgb(249, 242, 242); /* Replace with your desired default color */
+    font-style: normal; /* Set the default font style to normal */
+    position: relative; /* Add position relative to create the underline effect */
+  }
+  
+  /* Add the underline element */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjust the position of the underline as needed */
+    height: 2px; /* Adjust the height of the underline as needed */
+    width: 0;
+    background-color: black; /* Replace with your desired underline color */
+    transition: width 0.3s, font-style 0.3s; /* Add the transition properties for width and font-style */
+  }
+  
+  .nav-link:hover::after {
+    width: 100%; /* Show the full underline on hover */
+    font-style: italic; /* Set the font style to italic on hover */
+  }
+  
+  /* Updated styles for the navbar */
+/* Navbar.css */
+
+/* Your existing styles for the header, first-layer, and navbar */
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Replace with your desired default color */
+    font-style: normal; /* Set the default font style to normal */
+    position: relative; /* Add position relative to create the underline effect */
+  }
+  
+  /* Add the underline element */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjust the position of the underline as needed */
+    height: 2px; /* Adjust the height of the underline as needed */
+    width: 0;
+    background-color: black; /* Replace with your desired underline color */
+    transition: width 0.3s, font-style 0.3s; /* Add the transition properties for width and font-style */
+  }
+  
+  .nav-link:hover::after {
+    width: 100%; /* Show the full underline on hover */
+    font-style: italic; /* Set the font style to italic on hover */
+  }
+  
+  /* Updated styles for the navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateY(0); /* Initially set the navbar in view */
+    transition: transform 0.3s ease-out, opacity 0.5s ease-out; /* Add the transition property for the smooth effect */
+    background: transparent; /* Set the background to transparent */
+    pointer-events: none; /* Avoid capturing mouse events */
+    opacity: 0;
+  }
+  
+  /* Additional styles for the hidden state of the navbar */
+  .navbar.hidden {
+    transform: translateY(-100%);
+    pointer-events: none; /* Avoid capturing mouse events */
+    opacity: 1;
+  }
+  
   

@@ -11,21 +11,7 @@ export interface NavItem {
 export interface HomePageProps {
   navItems: NavItem[];
 }
-const navItems=[
-    {
-        id: 1,
-        path: "/",
-        label: "Home",
-    }, {
-        id: 1,
-        path: "/",
-        label: "Gallery",
-    }, {
-        id: 1,
-        path: "/",
-        label: "Collection",
-    }
-]
+
 const Navbar: React.FC<HomePageProps> = ({ navItems }) => {
   const [isNavbarHidden, setIsNavbarHidden] = useState(false);
 
