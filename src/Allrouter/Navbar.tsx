@@ -1,18 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'; // Import your custom CSS file for Navbar styling
-//import logo from './your-logo.png'; // Import your logo image
 
-const Navbar: React.FC = () => {
+export interface NavItem {
+  id: number;
+  path: string;
+  label: string;
+}
+
+export interface HomePageProps {
+  navItems: NavItem[];
+}
+const navItems=[
+    {
+        id: 1,
+        path: "/",
+        label: "Home",
+    }, {
+        id: 1,
+        path: "/",
+        label: "Gallery",
+    }, {
+        id: 1,
+        path: "/",
+        label: "Collection",
+    }
+]
+const Navbar: React.FC<HomePageProps> = ({ navItems }) => {
+  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
+
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isScrollingUp = prevScrollPos > currentScrollPos;
+
+      setIsNavbarHidden(isScrollingUp);
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header>
       {/* First Layer */}
       <div className="first-layer">
         <div className="first-layer__logo">
-          <img src={""} alt="Logo" className="navbar__logo" />
+          <img src="" alt="Logo" className="navbar__logo" />
         </div>
         <div className="first-layer__name">
-        <p>Rabin !</p>
+          <p>Rabin !</p>
         </div>
         <div className="first-layer__upload">
           <button className="navbar__upload-btn">Upload Photo</button>
@@ -20,32 +60,19 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Second Layer - Navbar */}
-      <nav className="navbar">
+      <nav className={`navbar ${isNavbarHidden ? 'hidden' : ''}`}>
         <ul className="nav-links">
-          <li>
-            <Link to="/" className="nav-link">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/gallery" className="nav-link">
-              Gallery
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="nav-link">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="nav-link">
-              Contact
-            </Link>
-          </li>
+          {navItems.map((navItem) => (
+            <li key={navItem.id}>
+              <Link to={navItem.path} className="nav-link">
+                {navItem.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
   );
-}
+};
 
 export default Navbar;

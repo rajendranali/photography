@@ -1,10 +1,11 @@
 /* Navbar.css */
 header {
-    background-color: #010101;
+   
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
   
   .first-layer {
@@ -13,6 +14,9 @@ header {
     justify-content: space-between;
     padding: 20px;
     width: 100%;
+    position: fixed;
+    padding-bottom: 30px;
+    z-index: 10px;
   }
   
   .first-layer__logo img {
@@ -39,6 +43,7 @@ header {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 150px;
   }
   
   .nav-links {

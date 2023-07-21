@@ -6,6 +6,9 @@
     grid-gap: 10px;
     padding: 20px;
     gap: 20px;
+    justify-items: center;
+    width: 85%;
+    margin-left: 7.5%;
   }
   
   .grid-item img {
